@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-scrollbar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1B3664">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="shortcut icon" type="image/png" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <title>UFU Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+            },
+            colors: {
+              ufu: {
+                blue: '#1B3664', // Deep blue
+                lightBlue: '#46629E', // Slightly lighter for borders/accents if needed
+                accent: '#E8F0FE',
+              }
+            },
+            screens: {
+              'xs': '375px',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Hide scrollbar for chrome/safari/opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      
+      .watermark-pattern {
+        background-color: #ffffff;
+        /* Hexagonal tile pattern approximation */
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231B3664' stroke-opacity='0.15' stroke-width='3'%3E%3Cpath d='M30 5 L50 15 L50 45 L30 55 L10 45 L10 15 Z' /%3E%3Cpath d='M30 20 L30 40 M20 25 L20 35 M40 25 L40 35' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 30px 30px; 
+      }
+      
+      /* App-like feel: prevent text selection on UI mostly */
+      body {
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: none; /* Prevent pull-to-refresh on Android mostly */
+      }
+      
+      /* Safe Area Utilities */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 20px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100 text-gray-800 antialiased selection:bg-ufu-lightBlue selection:text-white h-[100dvh] w-full overflow-hidden">
+    <div id="root" class="h-full w-full overflow-y-auto no-scrollbar"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
