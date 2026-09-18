@@ -41,10 +41,10 @@ export const STUDENT_GEO: StudentInfo = {
   course: 'CURSO DE GRADUAÇÃO EM ESTATÍSTICA',
   matricula: '45197JKM247',
   cpf: '164.370.016-23',
-  rg: '24.958.734 - PC/SP',
-  naturalidade: 'Bauru SP',
+  rg: '24.958.734 - PC/MG',
+  naturalidade: 'Uberaba',
   filiacao: ['Jorge Damiao dos Santos', 'Nayara Batista da Silva'],
-  birthDate: '20/02/2006',
+  birthDate: '20/02/2008',
   validity: '10/12/2028',
   photoUrl: 'https://i.imgur.com/NmZvMrP.png'
 };
